@@ -46,7 +46,8 @@
 ---
 
 - 계층으로 되어있고 각 계층들끼리의 의존성을 가진다
-![Untitled](https://github.com/citytexi/daily/blob/main/%EA%B3%B5%EB%B6%80/%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4-Layered_pattern/Untitled.png)
+
+    ![Untitled](https://github.com/citytexi/daily/blob/main/%EA%B3%B5%EB%B6%80/%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4-Layered_pattern/Untitled.png)
 
 - layer 1은 하위 layer 2에 의존
 - layer 2는 하위 layer 3에 의존
@@ -95,4 +96,5 @@
 
 - 일반적인 데스크톱 어플리케이션
 - E-commerce 웹 어플리케이션
-    ![Untitled](https://github.com/citytexi/daily/blob/main/%EA%B3%B5%EB%B6%80/%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4-Layered_pattern/Untitled_1.png)
+
+      ![Untitled](https://github.com/citytexi/daily/blob/main/%EA%B3%B5%EB%B6%80/%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4/%EA%B3%84%EC%B8%B5%ED%99%94_%ED%8C%A8%ED%84%B4-Layered_pattern/Untitled_1.png)
