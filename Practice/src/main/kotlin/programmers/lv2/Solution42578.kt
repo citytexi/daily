@@ -49,31 +49,19 @@ face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로
 
 private class Solution42578 {
     fun solution(clothes: Array<Array<String>>): Int {
-        var answer = 0
-        return answer
-    }
+        val clothesMap : HashMap<String, Int> = HashMap()
 
-    private fun <T> combination(elements: Array<T>, r: Int): List<List<T>> {
-        val n = elements.size
-        val results = mutableListOf<List<T>>() // 모든 경우의 수
-
-        val result = elements.sliceArray(0 until r)
-
-        fun recursionCombination(depth: Int = 0, index: Int = 0) {
-            if (depth == r) {
-                results.add(result.toList())
-                return
-            }
-
-            for (i in index until n) {
-                result[depth] = elements[i]
-                recursionCombination(depth + 1, i + 1)
+        clothes.forEach {
+            val type = it[1]
+            when (clothesMap.containsKey(type)) {
+                true -> clothesMap[type] = (clothesMap[type] ?: 1) + 1
+                false -> clothesMap[type] = 1
             }
         }
 
-        recursionCombination()
-        return results
+        return clothesMap.values.fold(1){ it, i -> it * (i + 1) } - 1
     }
+
 }
 
 private fun main() {
