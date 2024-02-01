@@ -1,4 +1,4 @@
-package algorithm.divide_and_conquer
+package algorithm.divide_and_conquer.merge_sort
 
 private class MergeSortExample {
     private lateinit var sortedArr: IntArray
