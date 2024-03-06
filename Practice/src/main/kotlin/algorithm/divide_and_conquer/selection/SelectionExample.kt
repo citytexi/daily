@@ -1,6 +1,6 @@
 package algorithm.divide_and_conquer.selection
 
-class SelectionExample {
+private class SelectionExample {
     fun solution(nums: IntArray, k: Int): Int = selection(a = nums, k = k)
 
     private fun selection(
