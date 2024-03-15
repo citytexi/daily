@@ -1,4 +1,4 @@
-package data_structure.tree
+package data_structure.tree.tree_traversal
 
 private data class TreeNode<T>(
     var data: T,
@@ -140,4 +140,6 @@ private fun main() {
     example.postOrder(example.root)
     println()
     example.levelOrder(example.root)
+
+    br.close()
 }
