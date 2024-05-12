@@ -5,7 +5,7 @@ private class Solution14003 {
     fun solution(
         n: Int,
         a: IntArray
-    ): Pair<String, String> {
+    ): String {
         val indexDp = IntArray(n)
         val list = mutableListOf<Int>()
 
@@ -36,8 +36,10 @@ private class Solution14003 {
             }
         }
 
+        val stringBuilder = StringBuilder()
         val resultDeque = ArrayDeque<Int>()
         var index = list.size - 1
+        stringBuilder.append("$index\n")
 
         for (i in n - 1 downTo 0) {
             if (index == indexDp[i]) {
@@ -46,13 +48,11 @@ private class Solution14003 {
             }
         }
 
-        var result = ""
-
         while (resultDeque.isNotEmpty()) {
-            result += "${resultDeque.removeLast()} "
+            stringBuilder.append("${resultDeque.removeLast()} ")
         }
 
-        return (list.size - 1).toString() to result
+        return stringBuilder.toString()
     }
 
 }
@@ -69,10 +69,7 @@ private fun main() {
 
     val solution14003 = Solution14003()
 
-    val result = solution14003.solution(n, a)
-
-    bw.append("${result.first}\n")
-    bw.append("${result.second}\n")
+    bw.append("${solution14003.solution(n, a)}\n")
     bw.flush()
 
     br.close()
