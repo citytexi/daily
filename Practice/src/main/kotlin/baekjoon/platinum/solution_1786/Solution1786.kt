@@ -5,48 +5,38 @@ private class Solution1786 {
         t: String,
         p: String
     ): String {
-        val tArray = t.toCharArray()
-        val pArray = p.toCharArray()
-
-        val stringBuilder = StringBuilder()
-        val result = mutableListOf<Int>()
-
-        var currentNextValue = 0
-
-        while (tArray.size - currentNextValue >= pArray.size) {
-            var nextIndex = Int.MAX_VALUE
-
-            var isSame = true
-
-            for (j in pArray.indices) {
-                val currentT = tArray[currentNextValue + j]
-                val currentP = pArray[j]
-
-                if (j != 0 && currentT == pArray[0]) {
-                    nextIndex = minOf(nextIndex, currentNextValue + j)
-                }
-
-                when (currentT) {
-                    currentP -> Unit
-                    else -> {
-                        isSame = false
-                    }
-                }
+        val arr = IntArray(p.length)
+        var j = 0
+        for (i in 1 until p.length) {
+            while (j > 0 && p[i] != p[j]) {
+                j = arr[j - 1]
             }
-
-            if (isSame) {
-                result.add(currentNextValue + 1)
-            }
-
-            when (nextIndex) {
-                Int.MAX_VALUE -> currentNextValue += pArray.size
-                else -> currentNextValue = nextIndex
+            if (p[i] == p[j]) {
+                arr[i] = ++j
             }
         }
 
-        stringBuilder.append("${result.size}\n")
-        result.forEach { stringBuilder.append("$it ") }
+        j = 0
+        val results = mutableListOf<Int>()
 
+        for (i in t.indices) {
+            while (j > 0 && t[i] != p[j]) {
+                j = arr[j - 1]
+            }
+            if (t[i] == p[j]) {
+                when (j) {
+                    p.length - 1 -> {
+                        results.add(i - p.length + 2)
+                        j = arr[j]
+                    }
+                    else -> j += 1
+                }
+            }
+        }
+
+        val stringBuilder = StringBuilder()
+        stringBuilder.append("${results.size}\n")
+        results.forEach { stringBuilder.append("$it ") }
         return stringBuilder.toString()
     }
 }
