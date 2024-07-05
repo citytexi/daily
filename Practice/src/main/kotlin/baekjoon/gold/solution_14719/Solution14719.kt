@@ -1,6 +1,6 @@
 package baekjoon.gold.solution_14719
 
-class Solution14719 {
+private class Solution14719 {
 
     fun solution(
         h: Int,
