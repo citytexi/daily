@@ -33,3 +33,5 @@ build
 .idea/
 .idea
 out/
+
+.DS_Store
